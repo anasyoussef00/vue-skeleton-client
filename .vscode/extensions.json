@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "Vue.volar",
+    "Vue.vscode-typescript-vue-plugin",
+    "ms-playwright.playwright",
+    "arcanis.vscode-zipfs",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode"
+  ]
+}
