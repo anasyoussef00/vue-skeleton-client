@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import CreateBookForm from '@/components/book/CreateBookForm.vue';
+import IndexBooksTable from '@/components/book/IndexBooksTable.vue';
 import BgWhiteFlexibleContainer from '@/components/containers/BgWhiteFlexibleContainer.vue';
 </script>
 
 <template>
   <div class="min-h-screen flex justify-center items-center">
-    <BgWhiteFlexibleContainer title="Create">
-      <CreateBookForm />
+    <BgWhiteFlexibleContainer width="w-2/3">
+      <IndexBooksTable />
     </BgWhiteFlexibleContainer>
   </div>
 </template>

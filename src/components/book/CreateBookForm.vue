@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import api from '@/services/api';
+import { useAuthStore } from '@/stores/auth';
 import { reactive } from 'vue';
+
+const authStore = useAuthStore();
 
 const formData = reactive({
   title: '',
@@ -12,7 +15,11 @@ const formData = reactive({
 
 const handleBookCreate = async () => {
   try {
-    const { data } = await api.post('/book/store', formData);
+    const { data } = await api.post('/book/store', formData, {
+      headers: {
+        Authorization: `Bearer ${authStore.token}`,
+      },
+    });
     console.log(data);
   } catch (err) {
     console.error(err);
