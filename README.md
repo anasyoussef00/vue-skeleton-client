@@ -110,9 +110,79 @@ yarn lint
 ### Walkthrough
 
 <details>
+    <summary>Directories</summary>
 
-<summary>Directories</summary>
-### <a href="./src">src</a><br>
-- sss
+### <a href="./src">src</a>
+
+- <a href="./src/components">components</a>
+    - This folder breaks the application into small parts (components) which you can glue together in
+      the <a href="./src/views">views</a> folder, e.g. The <a href="./src/components/authentication/LoginForm.vue">Login
+      Form</a> is defined in
+      the <a href="./src/components/authentication/LoginForm.vue">```/src/components/authentication/LoginForm.vue```</a>
+      component and called in
+      the <a href="./src/views/authentication/LoginView.vue">```/src/views/authentication/LoginView.vue```</a> view
+      alongside the <a href="./src/components/containers/BgWhiteFlexibleContainer.vue">Container</a>. Same thing applies
+      to the <a href="./src/components/book">Books</a> CRUD (Check the <a href="./src/components/book">Book components
+      folder</a> and <a href="./src/views/book">Book views folder</a> for more).
+
+- <a href="./src/views">views</a>
+    - As mentioned above, the <a href="./src/views">views</a> folder is the glue that glues components together (It is
+      recommended to keep the logic in either the <a href="./src/components">components</a>, <a href="./src/stores">
+      stores</a> or <a href="./src/services">services</a>).
+
+- <a href="./src/router">router</a>
+    - This folder contains <a href="./src/router/index.ts">index.ts</a> which holds all the routes and anything related
+      to the router (e.g. Middleware, Route guards, etc...).
+
+- <a href="./src/stores">stores</a>
+    - Since this application uses [Pinia](https://pinia.vuejs.org/) as the store it is an industry standard to keep all
+      the store logic in a folder <a href="./src/stores">stores</a> directory.
+    - This template only has one store, the <a href="./src/stores/auth/index.ts">auth</a> store.
+    - It is possible to put all your components' logic in the store, but it is not necessary. It is recommended to only
+      use the store for shared logic, in this template we only used the store to handle the JWT Token (saving the token
+      to local storage and removing the token).
+    - Why Pinia?
+        * Since this project uses Vue 3 which comes with new features such
+          as [Composition API](https://vuejs.org/guide/extras/composition-api-faq.html), it's efficient to use the same
+          syntax and coding style throughout the whole project for readability and productivity reasons. This is
+          where [Pinia](https://pinia.vuejs.org/) shines it uses the new Composition API by default and supports
+          Typescript seamlessly and without headaches unlike Vuex that needs some complicated configurations to support
+          Typescript and doesn't support Composition API.
+
+- <a href="./src/types">types</a>
+    - This folder contains global custom Typescript types and interfaces.
+    - In this template we used the folder to define interfaces that group data coming from the backend, (e.g. IBook,
+      IUser and IBookResp). This way we can manipulate the data coming from the backend using axios, and we benefit from
+      typescript's type system + we get auto-complete from our favorite IDE.
+
+- <a href="./src/services">services</a>
+    - This folder is just a utility folder that contains custom tools that you can use throughout the whole project.
+    - In this template we only used this folder to register a new [Axios instance](https://axios-http.com/docs/instance)
+      using the ```create()``` method we passed it only 1 parameter ```baseURL``` which acts like a prefix URL so that
+      we don't repeat ourselves each time we send a request to the backend.
+
+### <a href="./e2e">e2e</a>
+
+- You can use this folder to run End-to-End tests of your application using
+  the [Playwright](https://playwright.dev/) framework.
+
 </details>
 
+<details>
+    <summary>Files</summary>
+
+- <a href="./src/App.vue">App.vue</a>
+    - This file contains the [Root Component](https://vuejs.org/guide/essentials/application.html#the-root-component).
+      As the official Vue.js documentation
+      says: ```Every app requires a "root component" that can contain other components
+      as its children.```
+
+- <a href="./src/main.ts">main.ts</a>
+    - This file is the index file of the project, we register the root component as a new application instance using
+      the ```createApp("./App.vue")``` method.
+    - We also create a new Pinia instance using the ```use(createPinia())``` method.
+    - We register the router using the ```use("./router")``` method.
+    - And lastly we tell vue that the root component has the id ```app``` hence the ```mount("#app")``` method.
+    - ```NOTE: We can do more things in this file (e.g. Registering Font Awesome icons, Importing css files globally, etc...)```
+
+</details>
