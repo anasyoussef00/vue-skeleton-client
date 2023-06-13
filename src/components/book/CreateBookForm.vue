@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import api from '@/services/api';
 import { useAuthStore } from '@/stores/auth';
+import Swal from 'sweetalert2';
 import { reactive } from 'vue';
+import { useRouter } from 'vue-router';
 
+const router = useRouter();
 const authStore = useAuthStore();
 
 const formData = reactive({
@@ -20,7 +23,12 @@ const handleBookCreate = async () => {
         Authorization: `Bearer ${authStore.token}`,
       },
     });
-    console.log(data);
+    Swal.fire({
+      title: 'Nice!',
+      text: 'Book created successfully',
+      icon: 'success',
+    });
+    router.push({ name: 'book-index' });
   } catch (err) {
     console.error(err);
   }

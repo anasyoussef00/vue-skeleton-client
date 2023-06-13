@@ -3,9 +3,11 @@ import api from '@/services/api';
 import { useAuthStore } from '@/stores/auth';
 import type { IBookResp } from '@/types/book';
 import { onMounted, reactive } from 'vue';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
+import Swal from 'sweetalert2';
 
 const route = useRoute();
+const router = useRouter();
 
 const book: IBookResp = reactive({
   id: 0,
@@ -47,7 +49,12 @@ const handleUpdate = async () => {
         Authorization: `Bearer ${authStore.token}`,
       },
     });
-    console.log(data);
+    Swal.fire({
+      title: 'Nice!',
+      text: `Book with the id: ${book.id} has been updated successfully.`,
+      icon: 'success',
+    });
+    router.push({ name: 'book-index' });
   } catch (err) {
     console.error(err);
   }
@@ -60,6 +67,12 @@ const handleDelete = async () => {
         Authorization: `Bearer ${authStore.token}`,
       },
     });
+    Swal.fire({
+      title: 'Nice!',
+      text: `Book with the id: ${book.id} has been deleted successfully.`,
+      icon: 'success',
+    });
+    router.push({ name: 'book-index' });
     console.log(data);
   } catch (err) {
     console.error(err);

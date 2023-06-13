@@ -4415,6 +4415,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"sweetalert2@npm:^11.7.10":
+  version: 11.7.10
+  resolution: "sweetalert2@npm:11.7.10"
+  checksum: 5b2638d4967d90ad2b1d6e7df0246e57ee4b959a6117fccc6156bdb74af0d3f9cadc29b0c340370786efdbfb66780d79ae384b61bc8ed5a27edb65a30b87e9ab
+  languageName: node
+  linkType: hard
+
 "symbol-tree@npm:^3.2.4":
   version: 3.2.4
   resolution: "symbol-tree@npm:3.2.4"
@@ -4915,6 +4922,7 @@ __metadata:
     pinia: ^2.0.36
     postcss: ^8.4.24
     prettier: ^2.8.8
+    sweetalert2: ^11.7.10
     tailwindcss: ^3.3.2
     typescript: ~5.0.4
     vite: ^4.3.5

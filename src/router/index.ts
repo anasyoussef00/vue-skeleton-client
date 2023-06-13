@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
+import IndexBooksViewVue from '@/views/book/IndexBooksView.vue';
 import { useAuthStore } from '@/stores/auth';
 
 const router = createRouter({
@@ -59,6 +60,15 @@ const router = createRouter({
         guestOnly: false,
       },
     },
+    // {
+    //   path: '/book',
+    //   name: 'book-index',
+    //   component: () => import('@/views/book/IndexBooksView.vue'),
+    //   meta: {
+    //     authRequired: true,
+    //     guestOnly: false,
+    //   },
+    // },
 
     // {
     //   path: '/about',

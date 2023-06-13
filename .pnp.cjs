@@ -48,6 +48,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["pinia", "virtual:814b0d4e4c64576ac8a10d35107ab3c902ad8ac87d6101f763754664f840a06731a5e53d759b1f0537cfddf70990caf4f219d5a4156d5d78c0e3a737047173bf#npm:2.1.3"],\
             ["postcss", "npm:8.4.24"],\
             ["prettier", "npm:2.8.8"],\
+            ["sweetalert2", "npm:11.7.10"],\
             ["tailwindcss", "npm:3.3.2"],\
             ["typescript", "patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=b5f058"],\
             ["vite", "virtual:814b0d4e4c64576ac8a10d35107ab3c902ad8ac87d6101f763754664f840a06731a5e53d759b1f0537cfddf70990caf4f219d5a4156d5d78c0e3a737047173bf#npm:4.3.9"],\
@@ -5298,6 +5299,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["sweetalert2", [\
+        ["npm:11.7.10", {\
+          "packageLocation": "./.yarn/cache/sweetalert2-npm-11.7.10-6a061601ed-5b2638d496.zip/node_modules/sweetalert2/",\
+          "packageDependencies": [\
+            ["sweetalert2", "npm:11.7.10"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["symbol-tree", [\
         ["npm:3.2.4", {\
           "packageLocation": "./.yarn/cache/symbol-tree-npm-3.2.4-fe70cdb75b-6e8fc7e148.zip/node_modules/symbol-tree/",\
@@ -6019,6 +6029,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["pinia", "virtual:814b0d4e4c64576ac8a10d35107ab3c902ad8ac87d6101f763754664f840a06731a5e53d759b1f0537cfddf70990caf4f219d5a4156d5d78c0e3a737047173bf#npm:2.1.3"],\
             ["postcss", "npm:8.4.24"],\
             ["prettier", "npm:2.8.8"],\
+            ["sweetalert2", "npm:11.7.10"],\
             ["tailwindcss", "npm:3.3.2"],\
             ["typescript", "patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=b5f058"],\
             ["vite", "virtual:814b0d4e4c64576ac8a10d35107ab3c902ad8ac87d6101f763754664f840a06731a5e53d759b1f0537cfddf70990caf4f219d5a4156d5d78c0e3a737047173bf#npm:4.3.9"],\
