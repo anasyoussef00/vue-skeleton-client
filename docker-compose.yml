@@ -1,0 +1,10 @@
+version: '3.9'
+
+services:
+  vue_skeleton:
+    container_name: vue_skeleton
+    build: .
+    ports:
+      - '8080:80'
+    tty: true
+    restart: always

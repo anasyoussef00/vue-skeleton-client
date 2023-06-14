@@ -57,6 +57,7 @@ This template should help get you started developing with Vue 3 and Typescript i
 - Download & install [NodeJS](https://nodejs.org).
 - Install [Yarn](https://yarnpkg.com/getting-started/install).
 - Install Vue 3: ```npm i -g @vue/cli```
+- Download & install [Docker](https://www.docker.com/) (Optional)
 
 ## Project Setup
 
@@ -105,6 +106,12 @@ yarn test:e2e --debug
 
 ```sh
 yarn lint
+```
+
+### Deploy and run using [Docker](https://www.docker.com/)
+
+```sh
+docker-compose up
 ```
 
 ### Walkthrough
